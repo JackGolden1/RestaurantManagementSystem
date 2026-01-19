@@ -138,7 +138,6 @@ The system enforces business rules and data integrity automatically through cons
 
 ## Authors
 
-Team HATS
 Joseph Walker, Alexa Corales, Giovanni Marroquin, Tommy Vives, Jack Golden
 
 ## License
