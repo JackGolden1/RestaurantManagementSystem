@@ -83,7 +83,7 @@ Follow the steps below to install and run the database and optional web applicat
    SHOW TABLES;
    ```
 
-5. Run the provided INSERT statements (from Deliverables 3 & 4) to populate sample data.
+5. Run the provided INSERT statements (from sampledata) to populate sample data.
 
 ### Running the Web Application (Optional)
 
