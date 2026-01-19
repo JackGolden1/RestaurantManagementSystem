@@ -60,56 +60,85 @@ Follow the steps below to install and run the database and optional web applicat
 * Python 3.x
 * Git
 
-### Database Setup
+### 1. Initial Setup
 
-1. Download and extract the project files.
+Download and Extract: Download the Final GroupDeliverable.zip file and extract its contents onto your computer.
 
-2. Open MySQL Workbench and import the SQL file:
 
-   * `teamHATS_complete_database.sql`
+Verify Files: Ensure the following files are present in the extracted folder: app.py, config.py, docker-compose.yaml, Dockerfile, requirements.txt, and TeamHATS_Complete_Database.sql.
 
-3. Create the database with the following credentials:
 
-   * **Database name:** `database_mgt`
 
-   * **Password:** `password`
 
-   > If you change these values, update them in `app.py` accordingly.
 
-4. Verify the database was created successfully:
+2. Database Configuration
+Before running the application, you must set up the MySQL database.
 
-   ```sql
-   USE database_mgt;
-   SHOW TABLES;
-   ```
 
-5. Run the provided INSERT statements (from Deliverables 3 & 4) to populate sample data.
+Import Database: Open MySQL Workbench and import the TeamHATS_Complete_Database.sql file.
 
-### Running the Web Application (Optional)
+Database Credentials:
 
-1. Open a terminal or PowerShell window.
-2. Create a virtual environment:
 
-   ```bash
-   python -m venv venv
-   ```
-3. Install dependencies:
+Name: database_mgt.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Start the application:
 
-   ```bash
-   python app.py
-   ```
-5. Open a browser and navigate to:
 
-   ```
-   http://localhost:5000
-   ```
+Password: password.
 
-You should now be able to interact with the database through the web interface.
+
+
+Custom Configuration: If you use a different name or password, you must open app.py in an IDE (like VS Code) and update the following lines to match your credentials:
+
+
+Python
+
+app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD', 'your_password')
+app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB', 'your_database_name')
+
+Populate Data: Copy and run the INSERT statements from Deliverables 3 & 4 in MySQL Workbench to populate the tables for customers, staff, menu items, etc.
+
+
+Verify Tables: Run the following commands in MySQL Workbench to confirm the setup:
+
+SQL
+
+USE database_mgt;
+SHOW TABLES;
+3. Running the Application
+Use Windows PowerShell to initialize and launch the web application.
+
+Create Virtual Environment:
+
+PowerShell
+
+python -m venv venv
+[cite_start]``` [cite: 58]
+Install Dependencies:
+
+PowerShell
+
+pip install -r requirements.txt
+[cite_start]``` [cite: 59]
+[cite_start]*(Note: If this fails, use the full file path for `requirements.txt`)[cite: 60].*
+Launch App:
+
+PowerShell
+
+python app.py
+[cite_start]``` [cite: 61]
+[cite_start]*(Note: If this fails, use the full file path for `app.py`)[cite: 61].*
+
+4. Accessing the Website
+Once the server is running (indicated by a "Running on http://127.0.0.1:5000" message in the terminal):
+
+Open your web browser.
+
+Navigate to: http://localhost:5000.
+
+You can now interact with the website and test the database functionality.
+
+Would you like me to help you draft a "Troubleshooting" section based on common Python or MySQL errors?
 
 ## Usage
 
